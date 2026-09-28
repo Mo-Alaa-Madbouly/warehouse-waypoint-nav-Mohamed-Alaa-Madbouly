@@ -1,0 +1,104 @@
+import os
+import xacro
+
+from ament_index_python.packages import get_package_share_directory
+
+from launch import LaunchDescription
+from launch.actions import IncludeLaunchDescription, SetEnvironmentVariable
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.substitutions import LaunchConfiguration
+from launch_ros.actions import Node
+
+
+def generate_launch_description():
+
+    pkg_share = get_package_share_directory('robot_description')
+    # turtlebot3_gazebo_share = get_package_share_directory('turtlebot3_gazebo')
+    use_sim_time = LaunchConfiguration('use_sim_time', default='True')
+
+    world_file = os.path.join(
+        pkg_share,
+        'worlds',
+        'warehouse_storage.sdf'
+    )
+
+    xacro_file = os.path.join(
+        pkg_share,
+        'urdf',
+        'robot_description.urdf.xacro'
+    )
+
+    bridge_file = os.path.join(
+        pkg_share,
+        'config',
+        'gz_bridge.yaml'
+    )
+
+    robot_description = xacro.process_file(xacro_file).toxml()
+
+    gazebo_resource_path = SetEnvironmentVariable(
+        name='GZ_SIM_RESOURCE_PATH',
+        value=':'.join([
+            os.path.join(pkg_share, 'worlds'),                    # lets the world file resolve its own relative includes
+            os.path.join(pkg_share, 'models'),                    # your own warehouse models, referenced as model://<name>
+            os.path.dirname(pkg_share),                           # lets model://robot_description/... resolve
+            # os.path.join(turtlebot3_gazebo_share, 'models')       # turtlebot3's models *subfolder*, not its package root
+        ])
+    )
+
+    gazebo = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            os.path.join(
+                get_package_share_directory('ros_gz_sim'),
+                'launch',
+                'gz_sim.launch.py'
+            )
+        ),
+        launch_arguments={
+            'gz_args': f'-s -r --headless-rendering {world_file}'
+        }.items()
+    )
+
+    robot_state_publisher = Node(
+        package='robot_state_publisher',
+        executable='robot_state_publisher',
+        name='robot_state_publisher',
+        output='screen',
+        parameters=[
+            {'robot_description': robot_description},
+            {'use_sim_time': True}
+        ]
+    )
+
+    spawn_robot = Node(
+        package='ros_gz_sim',
+        executable='create',
+        arguments=[
+            '-topic', 'robot_description',
+            '-name', 'two_wheel_robot',
+            '-x', '0.0',
+            '-y', '0.0',
+            '-z', '0.0',
+            '-R', '0.0',
+            '-P', '0.0',
+            '-Y', '0.0'
+        ],
+        output='screen'
+    )
+
+    bridge = Node(
+        package='ros_gz_bridge',
+        executable='parameter_bridge',
+        parameters=[
+            {'config_file': bridge_file}
+        ],
+        output='screen'
+    )
+
+    return LaunchDescription([
+        gazebo_resource_path,
+        gazebo,
+        robot_state_publisher,
+        spawn_robot,
+        bridge
+    ])
