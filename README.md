@@ -336,10 +336,10 @@ Place the images in an `images/` folder at the repository root and update the fi
 
 mapping
 1
-![1](<attatchments/map1.mp4>)
+![mapping video 1](<attatchments/map1.mp4>)
 
 2
-![2](attatchments/map2.mp4)
+![mapping video 2](attatchments/map2.mp4)
 
 navigation
-![3](attatchments/nav.mp4)
+![navigation video](attatchments/nav.mp4)
