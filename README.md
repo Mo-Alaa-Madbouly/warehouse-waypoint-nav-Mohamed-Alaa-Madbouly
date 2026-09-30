@@ -324,11 +324,11 @@ Place the images in an `images/` folder at the repository root and update the fi
 
 | Stage                                 | Screenshot                                 |
 | ------------------------------------- | ------------------------------------------ |
-| Robot in the warehouse world (Gazebo) | ![[attatchments\vlcsnap-2026-09-28-20h11m59s269.png]]   |
-| Mapping with SLAM Toolbox             | ![[vlcsnap-2026-09-28-20h13m06s432.png]]   |
-| Saved warehouse map                   | ![[Pasted image 20260928202953.png]]       |
-| AMCL localization (particle cloud)    | ![[Pasted image 20260928203215.png]]       |
-| Navigation in progress                | ![[vlcsnap-2026-09-28-20h15m04s589 1.png]] |
+| Robot in the warehouse world (Gazebo) | ![[attatchments/Pasted image 20260917191400.png]]   |
+| Mapping with SLAM Toolbox             | ![[attatchments/vlcsnap-2026-09-28-20h13m06s432.png]]   |
+| Saved warehouse map                   | ![[attatchments/Pasted image 20260928202953.png]]       |
+| AMCL localization (particle cloud)    | ![[attatchments/Pasted image 20260928203215.png]]       |
+| Navigation in progress                | ![[attatchments/vlcsnap-2026-09-28-20h15m04s589 1.png]] |
 
 ---
 
@@ -336,10 +336,10 @@ Place the images in an `images/` folder at the repository root and update the fi
 
 mapping
 1
-![[map1.mp4]]
+![[attatchments/map1.mp4]]
 
 2
-![[map2.mp4]]
+![[attatchments/map2.mp4]]
 
 navigation
-![[nav.mp4]]
+![[attatchments/nav.mp4]]
