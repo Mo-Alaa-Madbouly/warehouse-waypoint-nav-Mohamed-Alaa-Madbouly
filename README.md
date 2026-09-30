@@ -322,13 +322,13 @@ TODO: Start (0, 0) → Waypoint 1 → Waypoint 2 → Waypoint 3 → Waypoint 4
 
 Place the images in an `images/` folder at the repository root and update the file names below.
 
-| Stage                                 | Screenshot                                 |
-| ------------------------------------- | ------------------------------------------ |
-| Robot in the warehouse world (Gazebo) | ![gazebo](<attatchments/Pasted image 20260917191400.png>)   |
-| Mapping with SLAM Toolbox             | ![[attatchments/vlcsnap-2026-09-28-20h13m06s432.png]]   |
-| Saved warehouse map                   | ![[attatchments/Pasted image 20260928202953.png]]       |
-| AMCL localization (particle cloud)    | ![[attatchments/Pasted image 20260928203215.png]]       |
-| Navigation in progress                | ![[attatchments/vlcsnap-2026-09-28-20h15m04s589 1.png]] |
+| Stage                                 | Screenshot                                                       |
+| ------------------------------------- | ---------------------------------------------------------------- |
+| Robot in the warehouse world (Gazebo) | ![gazebo](<attatchments/Pasted image 20260917191400.png>)        |
+| Mapping with SLAM Toolbox             | ![mapping](<attatchments/vlcsnap-2026-09-28-20h13m06s432.png>)   |
+| Saved warehouse map                   | ![map](<attatchments/Pasted image 20260928202953.png>)           |
+| AMCL localization (particle cloud)    | ![amcl](<attatchments/Pasted image 20260928203215.png>)          |
+| Navigation in progress                | ![nav](<attatchments/vlcsnap-2026-09-28-20h15m04s589 1.png>)     |
 
 ---
 
@@ -336,10 +336,10 @@ Place the images in an `images/` folder at the repository root and update the fi
 
 mapping
 1
-![[attatchments/map1.mp4]]
+![1](<attatchments/map1.mp4>)
 
 2
-![[attatchments/map2.mp4]]
+![2](attatchments/map2.mp4)
 
 navigation
-![[attatchments/nav.mp4]]
+![3](attatchments/nav.mp4)
