@@ -324,7 +324,7 @@ Place the images in an `images/` folder at the repository root and update the fi
 
 | Stage                                 | Screenshot                                 |
 | ------------------------------------- | ------------------------------------------ |
-| Robot in the warehouse world (Gazebo) | ![[vlcsnap-2026-09-28-20h11m59s269.png]]   |
+| Robot in the warehouse world (Gazebo) | ![[attatchments\vlcsnap-2026-09-28-20h11m59s269.png]]   |
 | Mapping with SLAM Toolbox             | ![[vlcsnap-2026-09-28-20h13m06s432.png]]   |
 | Saved warehouse map                   | ![[Pasted image 20260928202953.png]]       |
 | AMCL localization (particle cloud)    | ![[Pasted image 20260928203215.png]]       |
