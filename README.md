@@ -4,7 +4,6 @@ Autonomous navigation of a custom differential-drive robot (**`two_wheel_robot`*
 
 **Author:** Mohamed Alaa Madbouly
 
-> Items marked `TODO` need your own results (waypoint values, video link) before submission.
 
 ---
 
